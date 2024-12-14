@@ -9,6 +9,8 @@ const courseRoutes = require("./routes/courseRoutes");
 const resultRoutes = require("./routes/resultRouters");
 const departmentRoutes = require("./routes/departmentRouters");
 dotenv.config();
+
+// Connect to the MongoDB database
 connectDB();
 
 const app = express();

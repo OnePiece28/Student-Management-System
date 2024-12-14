@@ -111,7 +111,6 @@ exports.createStudent = async (req, res) => {
       courses,
       department,
     });
-
     const savedStudent = await newStudent.save();
     res.status(201).json(savedStudent);
   } catch (err) {
@@ -137,7 +136,7 @@ exports.updateStudent = async (req, res) => {
         department,
       },
       { new: true }
-    );
+    ).populate("student");
     if (!updatedStudent) {
       return res.status(404).json({ message: "Student not found" });
     }
